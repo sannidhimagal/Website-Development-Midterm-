@@ -1,0 +1,434 @@
+/* =========================================================
+   Sannidhi Magal - Resume website
+   Theme: midnight blue (#191970 is the CSS colour "midnightblue")
+   ========================================================= */
+
+/* ---------- Basics (inheritance: set once on body) ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Bakersville", "Baskerville", "Libre Baskerville", Georgia, serif;
+  background-color: #0a0a2e;
+  color: #e6ebff;
+  line-height: 1.7;
+}
+
+a {
+  color: #8fb4ff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f2d88b;
+  text-decoration: underline;
+}
+
+.gold {
+  color: #f2d88b;
+}
+
+/* ---------- Navigation (position: fixed, flexbox) ---------- */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 6%;
+  background-color: #05051a;
+  border-bottom: 1px solid #3b4aa8;
+  z-index: 10;
+}
+
+.logo {
+  color: #f2d88b;
+  font-size: 1.4rem;
+  letter-spacing: 3px;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+nav li a {
+  color: #e6ebff;
+  font-size: 0.95rem;
+}
+
+nav li a:hover {
+  color: #f2d88b;
+  text-decoration: none;
+  border-bottom: 1px solid #f2d88b;
+}
+
+/* ---------- Hero (position: relative / absolute) ---------- */
+header {
+  position: relative;
+  text-align: center;
+  padding: 140px 20px 90px;
+  background-color: #191970;
+  border-bottom: 1px solid #3b4aa8;
+}
+
+header::before {
+  content: "\2726   \2727   \2726   \2727   \2726";
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  color: #8fb4ff;
+  letter-spacing: 12px;
+  font-size: 0.8rem;
+}
+
+header::after {
+  content: "\2727   \2726   \2727   \2726   \2727";
+  position: absolute;
+  bottom: 22px;
+  left: 0;
+  width: 100%;
+  color: #8fb4ff;
+  letter-spacing: 12px;
+  font-size: 0.8rem;
+}
+
+.eyebrow {
+  color: #a3acd6;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 0.9rem;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: normal;
+  letter-spacing: 2px;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.button, button {
+  display: inline-block;
+  padding: 10px 30px;
+  margin: 4px 6px;
+  color: #f2d88b;
+  background-color: transparent;
+  border: 1px solid #f2d88b;
+  border-radius: 30px;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.button:hover, button:hover {
+  color: #0a0a2e;
+  background-color: #f2d88b;
+  text-decoration: none;
+}
+
+/* ---------- Sections ---------- */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  padding-top: 90px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2.1rem;
+  font-weight: normal;
+  letter-spacing: 2px;
+  color: #f2d88b;
+  margin-bottom: 34px;
+}
+
+h2::after {
+  content: "\2726  \2726  \2726";
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 8px;
+  color: #8fb4ff;
+}
+
+h3 {
+  font-weight: normal;
+  font-size: 1.25rem;
+  color: #f2d88b;
+  margin-bottom: 6px;
+}
+
+.org {
+  color: #8fb4ff;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-bottom: 6px;
+}
+
+/* ---------- Cards (box model: padding, border, margin) ---------- */
+.card {
+  background-color: #191970;
+  border: 1px solid #3b4aa8;
+  border-radius: 12px;
+  padding: 26px;
+}
+
+.card:hover {
+  border-color: #f2d88b;
+}
+
+.card p {
+  margin-bottom: 10px;
+}
+
+.card ol {
+  margin-left: 24px;
+}
+
+.card li {
+  margin-bottom: 6px;
+}
+
+/* ---------- About (float and clear) ---------- */
+.avatar {
+  float: left;
+  display: inline-block;
+  width: 110px;
+  height: 110px;
+  line-height: 104px;
+  margin: 0 26px 10px 0;
+  text-align: center;
+  font-size: 2rem;
+  color: #f2d88b;
+  background-color: #0a0a2e;
+  border: 2px solid #f2d88b;
+  border-radius: 50%;
+}
+
+.about::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* ---------- Table ---------- */
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #191970;
+}
+
+th, td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #3b4aa8;
+}
+
+th {
+  color: #f2d88b;
+  background-color: #05051a;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
+tr:hover td {
+  background-color: #23238a;
+}
+
+/* ---------- Grid and flexbox layouts ---------- */
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.three-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  margin-top: 12px;
+}
+
+.tags li {
+  padding: 4px 16px;
+  border: 1px solid #8fb4ff;
+  border-radius: 30px;
+  color: #8fb4ff;
+  font-size: 0.9rem;
+}
+
+.tags li:hover {
+  color: #0a0a2e;
+  background-color: #8fb4ff;
+}
+
+/* ---------- Activities (list styled as a timeline) ---------- */
+.timeline {
+  list-style: none;
+  margin-left: 12px;
+  border-left: 2px solid #f2d88b;
+}
+
+.timeline > li {
+  position: relative;
+  margin: 0 0 24px 30px;
+  padding: 18px 22px;
+  background-color: #191970;
+  border: 1px solid #3b4aa8;
+  border-radius: 12px;
+}
+
+.timeline > li::before {
+  content: "";
+  position: absolute;
+  left: -42px;
+  top: 24px;
+  width: 16px;
+  height: 16px;
+  background-color: #f2d88b;
+  border-radius: 50%;
+}
+
+.timeline > li:hover {
+  border-color: #f2d88b;
+}
+
+.timeline ul {
+  margin-left: 22px;
+  color: #a3acd6;
+}
+
+/* ---------- Form ---------- */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  color: #a3acd6;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  margin: 10px 0 4px;
+}
+
+input, textarea {
+  padding: 10px 14px;
+  color: #e6ebff;
+  background-color: #0a0a2e;
+  border: 1px solid #3b4aa8;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #f2d88b;
+}
+
+form button {
+  margin-top: 16px;
+  align-self: flex-start;
+}
+
+/* ---------- Footer and back-to-top ---------- */
+footer {
+  clear: both;
+  margin-top: 90px;
+  padding: 40px 20px;
+  text-align: center;
+  color: #a3acd6;
+  font-size: 0.9rem;
+  border-top: 1px solid #3b4aa8;
+}
+
+.to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 44px;
+  height: 44px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #f2d88b;
+  background-color: #191970;
+  border: 1px solid #f2d88b;
+  border-radius: 50%;
+}
+
+.to-top:hover {
+  color: #0a0a2e;
+  background-color: #f2d88b;
+  text-decoration: none;
+}
+
+/* ---------- Responsive design (media queries) ---------- */
+@media (max-width: 900px) {
+  .three-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  nav {
+    flex-direction: column;
+  }
+
+  nav ul {
+    text-align: center;
+    margin-top: 6px;
+  }
+
+  nav li {
+    margin: 0 8px;
+  }
+
+  header {
+    padding-top: 190px;
+  }
+
+  h1 {
+    font-size: 2.6rem;
+  }
+
+  .two-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .avatar {
+    float: none;
+    display: block;
+    margin: 0 auto 16px;
+  }
+
+  th, td {
+    padding: 10px;
+    font-size: 0.85rem;
+  }
+}
